@@ -1,0 +1,12 @@
+# Tested on Google Colab (T4 GPU, Python 3.13): torch 2.11, torchvision 0.26, transformers 5.21, datasets 5.1
+torch>=2.3
+torchvision>=0.18
+transformers>=4.44
+datasets>=3.0
+scikit-learn>=1.4
+scipy>=1.11
+numpy>=1.26
+pandas>=2.1
+matplotlib>=3.8
+pillow>=10.0
+tqdm>=4.66

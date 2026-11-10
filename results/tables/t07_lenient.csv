@@ -1,0 +1,9 @@
+method,i2t_len_R1,i2t_len_R10,i2t_len_MRR,t2i_len_R1,t2i_len_R10,t2i_len_MRR
+Random,0.16,1.13,0.01,0.1,1.1,0.01
+Ridge,2.28,10.31,0.05,1.31,10.83,0.05
+Early fusion,3.61,16.77,0.08,3.72,18.79,0.09
+Contrastive,3.69,17.59,0.08,3.31,18.74,0.09
+Hybrid (contrastive + EF re-rank),4.12,18.98,0.09,3.78,20.14,0.09
+Cross-attention re-rank,4.16,17.97,0.09,3.78,19.47,0.09
+CLIP zero-shot (ref),13.53,35.27,0.21,9.86,30.69,0.17
+CLIP feats + contrastive head (ref),17.79,48.84,0.28,12.77,41.66,0.22

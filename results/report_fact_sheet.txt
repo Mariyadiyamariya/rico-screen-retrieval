@@ -1,0 +1,184 @@
+============================== REPORT FACT SHEET ==============================
+python: 3.13.16
+torch: 2.14.1+cu130
+torchvision: 0.29.1+cu130
+transformers: 5.22.1
+datasets: 4.8.5
+device: cuda
+gpu_name: Tesla T4
+dataset_id_used: rootsautomation/RICO-Screen2Words
+original_split_sizes: {'train': 15743, 'val': 2364, 'test': 4310}
+n_screens_raw: 22417
+n_captions_raw: 112085
+missing_values_per_column: {'screenId': 0, 'captions': 0, 'app_package_name': 0, 'play_store_name': 0, 'category': 0}
+captions_per_screen: {'5': 22417}
+empty_captions: 0
+caption_words_median_p95_max: [7.0, 10.0, 12]
+vocab_size: 6787
+nonascii_caption_share: 0.0
+share_captions_reused_across_screens: 0.3179
+top_generic_captions: {'welcome page': 635, 'login page': 389, 'sign in page': 346, 'settings page': 296, 'sign up page': 250, 'display of a pop up': 208, 'home page': 202, 'page displaying different options': 192}
+duplicate_captions_within_screen: 979
+malformed_category_rows: 1
+malformed_category_values: {'000 - 1': 1}
+n_categories: 28
+category_largest_smallest: {'Shopping': 1648, 'Social': 1641, 'Events': 55, 'Unknown': 1}
+category_imbalance_ratio_max_over_min: 29.9636
+n_apps: 6269
+screens_per_app_median_max: [2.0, 45]
+share_screens_sensitive_function: 0.2471
+pii_regex_hits_in_captions: {'email': 0, 'phone': 0, 'url': 0, 'handle': 0}
+cleaning_impact: [{'stage': 'raw', 'screens': 22417, 'captions': 112085, 'captions_kept_%': 100.0}, {'stage': 'minus manual-review PII screens', 'screens': 22417, 'captions': 112085, 'captions_kept_%': 100.0}, {'stage': 'after caption cleaning', 'screens': 22417, 'captions': 111106, 'captions_kept_%': 99.13}]
+bert_tokens_median_p99_max: [9.0, 13.0, 18]
+share_truncated_at_max_len: 0.0001
+img_sample_n: 1000
+img_sample_corrupt: 0
+img_resolutions_top: {'(1080, 1920)': 748, '(540, 960)': 252}
+img_aspect_median: 0.5625
+img_modes: {'RGB': 1000}
+img_formats: {'JPEG': 1000}
+img_near_blank: 0
+pii_screens_excluded: 0
+nonfinite_feature_values: {'resnet50': 0, 'efficientnet_b0': 0, 'vit_b_16': 0, 'clip_img': 0, 'bert_mean': 0, 'bert_cls': 0, 'clip_txt': 0}
+feature_dims: {'resnet50': 2048, 'efficientnet_b0': 1280, 'vit_b_16': 768, 'clip_img': 512, 'bert_mean': 768, 'bert_cls': 768, 'clip_txt': 512}
+image_extraction_min_all_encoders: 8.1673
+images_per_s: 45.7457
+text_extraction_min: 1.343
+captions_per_s: 1378.8548
+extraction_peak_gpu_gb: [1.709, 0.8763]
+corrupt_images_dropped: 0
+token_feature_shapes: {'img_regions': [22417, 21, 2048], 'txt_tokens': [111106, 16, 768], 'txt_mask': [111106, 16]}
+screens_used: 22417
+near_duplicate_pairs: 45929
+screens_with_a_near_duplicate: 0.3638
+near_duplicate_pairs_across_apps: 0.9414
+leakage_app_split_val_test: {'val': 0.2511, 'test': 0.2533}
+n_components: 3405
+largest_component_share: 0.6164
+purged_val_screens: 574
+purged_test_screens: 579
+split_strategy: app-level split + purge of val/test screens with a train near-duplicate (fallback)
+leakage_final_split_val_test: {'val': 0.0, 'test': 0.0}
+split_sizes: {'purged': 1153, 'test': 1707, 'train': 17845, 'val': 1712}
+app_overlap_train_test: 0
+test_captions_with_identical_train_text: 0.2827
+feature_selection: [{'image_encoder': 'vit_b_16', 'text_pooling': 'bert_mean', 'img_dim': 768, 'ridge_val_avg_R10': 9.31, 'contrastive_val_avg_R10': 15.28, 'contrastive_best_epoch': 15}, {'image_encoder': 'efficientnet_b0', 'text_pooling': 'bert_mean', 'img_dim': 1280, 'ridge_val_avg_R10': 9.0, 'contrastive_val_avg_R10': 14.69, 'contrastive_best_epoch': 10}, {'image_encoder': 'vit_b_16', 'text_pooling': 'bert_cls', 'img_dim': 768, 'ridge_val_avg_R10': 8.62, 'contrastive_val_avg_R10': 14.1, 'contrastive_best_epoch': 17}, {'image_encoder': 'efficientnet_b0', 'text_pooling': 'bert_cls', 'img_dim': 1280, 'ridge_val_avg_R10': 8.13, 'contrastive_val_avg_R10': 13.71, 'contrastive_best_epoch': 10}, {'image_encoder': 'resnet50', 'text_pooling': 'bert_mean', 'img_dim': 2048, 'ridge_val_avg_R10': 8.8, 'contrastive_val_avg_R10': 12.64, 'contrastive_best_epoch': 12}, {'image_encoder': 'resnet50', 'text_pooling': 'bert_cls', 'img_dim': 2048, 'ridge_val_avg_R10': 7.98, 'contrastive_val_avg_R10': 11.49, 'contrastive_best_epoch': 12}]
+chosen_image_encoder: vit_b_16
+chosen_text_pooling: bert_mean
+test_gallery: {'screens': 1707, 'captions': 8447}
+ridge_alpha: 1000.0
+hybrid_lambdas_chosen: [2.0, 2.0, 1.0]
+xattn_lambdas_chosen: [1.0, 1.0, 0.5]
+xattn_pairs_per_s: 59276.2712
+ablations: [{'config': 'Contrastive: linear head', 'test_avg_R10': 12.99, 'sd': 0.28, 'test_i2t_R10': 14.22, 'test_t2i_R10': 11.76, 'val_avg_R10': 13.67, 'best_epoch': 14.0, 'train_s': 8.85}, {'config': 'Contrastive: main (multi-positive + dedup, MLP)', 'test_avg_R10': 15.04, 'sd': 0.36, 'test_i2t_R10': 15.95, 'test_t2i_R10': 14.12, 'val_avg_R10': 15.32, 'best_epoch': 19.67, 'train_s': 13.18}, {'config': 'Contrastive: multi-positive, no dedup', 'test_avg_R10': 15.09, 'sd': 0.66, 'test_i2t_R10': 16.13, 'test_t2i_R10': 14.06, 'val_avg_R10': 15.79, 'best_epoch': 15.67, 'train_s': 10.86}, {'config': 'Contrastive: single positive (2.1)', 'test_avg_R10': 13.85, 'sd': 0.36, 'test_i2t_R10': 14.49, 'test_t2i_R10': 13.21, 'val_avg_R10': 14.16, 'best_epoch': 13.67, 'train_s': 9.39}, {'config': 'Early fusion: BCE, 7 negatives (2.1)', 'test_avg_R10': 10.52, 'sd': 1.06, 'test_i2t_R10': 10.64, 'test_t2i_R10': 10.4, 'val_avg_R10': 11.61, 'best_epoch': 30.0, 'train_s': 131.08}, {'config': 'Early fusion: main (multi-positive + dedup, MLP)', 'test_avg_R10': 14.84, 'sd': 0.41, 'test_i2t_R10': 15.52, 'test_t2i_R10': 14.15, 'val_avg_R10': 14.99, 'best_epoch': 18.67, 'train_s': 74.47}]
+test::Random: {'i2t_R1': 0.1172, 'i2t_R5': 0.4296, 'i2t_R10': 0.6249, 'i2t_MRR': 0.005, 'i2t_MedR': 1114.0, 't2i_R1': 0.0474, 't2i_R5': 0.3117, 't2i_R10': 0.5406, 't2i_MRR': 0.0046, 't2i_MedR': 850.6667, 'rsum': 2.0714, 'avg_R10': 0.5828, 'i2t_len_R10': 1.1326, 't2i_len_R10': 1.1049}
+test::Ridge: {'i2t_R1': 2.0504, 'i2t_R5': 6.5612, 'i2t_R10': 10.1933, 'i2t_MRR': 0.051, 'i2t_MedR': 188.0, 't2i_R1': 1.0891, 't2i_R5': 4.475, 't2i_R10': 7.695, 't2i_MRR': 0.0358, 't2i_MedR': 226.0, 'rsum': 32.0641, 'avg_R10': 8.9442, 'i2t_len_R10': 10.3105, 't2i_len_R10': 10.8322}
+test::Early fusion: {'i2t_R1': 2.5581, 'i2t_R5': 9.6661, 'i2t_R10': 15.5243, 'i2t_MRR': 0.0711, 'i2t_MedR': 94.5, 't2i_R1': 2.6518, 't2i_R5': 8.721, 't2i_R10': 14.1549, 't2i_MRR': 0.0671, 't2i_MedR': 102.6667, 'rsum': 53.2763, 'avg_R10': 14.8396, 'i2t_len_R10': 16.7741, 't2i_len_R10': 18.7917}
+test::Contrastive: {'i2t_R1': 2.9486, 'i2t_R5': 9.8614, 'i2t_R10': 15.9539, 'i2t_MRR': 0.0746, 'i2t_MedR': 96.8333, 't2i_R1': 2.569, 't2i_R5': 8.7132, 't2i_R10': 14.1194, 't2i_MRR': 0.0668, 't2i_MedR': 110.0, 'rsum': 54.1654, 'avg_R10': 15.0367, 'i2t_len_R10': 17.5942, 't2i_len_R10': 18.7364}
+test::Hybrid (contrastive + EF re-rank): {'i2t_R1': 2.9486, 'i2t_R5': 11.4236, 'i2t_R10': 17.1646, 'i2t_MRR': 0.0796, 'i2t_MedR': 97.0, 't2i_R1': 2.8373, 't2i_R5': 9.6444, 't2i_R10': 15.2638, 't2i_MRR': 0.072, 't2i_MedR': 110.1667, 'rsum': 59.2824, 'avg_R10': 16.2142, 'i2t_len_R10': 18.9807, 't2i_len_R10': 20.1373}
+test::Cross-attention re-rank: {'i2t_R1': 3.3197, 'i2t_R5': 10.33, 'i2t_R10': 16.3249, 'i2t_MRR': 0.0788, 'i2t_MedR': 97.0, 't2i_R1': 2.7663, 't2i_R5': 9.0644, 't2i_R10': 14.6561, 't2i_MRR': 0.0691, 't2i_MedR': 110.1667, 'rsum': 56.4613, 'avg_R10': 15.4905, 'i2t_len_R10': 17.9652, 't2i_len_R10': 19.4744}
+test::CLIP zero-shot (ref): {'i2t_R1': 13.4153, 'i2t_R5': 27.3579, 'i2t_R10': 35.0322, 'i2t_MRR': 0.2092, 'i2t_MedR': 28.0, 't2i_R1': 9.1512, 't2i_R5': 21.1673, 't2i_R10': 27.6903, 't2i_MRR': 0.1542, 't2i_MedR': 64.0, 'rsum': 133.8143, 'avg_R10': 31.3613, 'i2t_len_R10': 35.2665, 't2i_len_R10': 30.6855}
+test::CLIP feats + contrastive head (ref): {'i2t_R1': 16.0906, 'i2t_R5': 36.1648, 'i2t_R10': 47.2369, 'i2t_MRR': 0.264, 'i2t_MedR': 12.6667, 't2i_R1': 10.7809, 't2i_R5': 26.98, 't2i_R10': 36.6008, 't2i_MRR': 0.1932, 't2i_MedR': 24.6667, 'rsum': 173.854, 'avg_R10': 41.9188, 'i2t_len_R10': 48.8381, 't2i_len_R10': 41.6598}
+best_learned_model: Hybrid (contrastive + EF re-rank)
+success_criterion_vs_ridge_R10: {'i2t': {'delta_pts': 6.9713, 'ci': [5.291, 8.5145], 'meets_5pt': True, 'significant_gt_0': True}, 't2i': {'delta_pts': 7.5688, 'ci': [6.5093, 8.5895], 'meets_5pt': True, 'significant_gt_0': True}}
+SUCCESS_CRITERION_MET_BOTH_DIRECTIONS: True
+avg_R10_1k_gallery_seed0: {'Ridge': 13.244, 'Early fusion': 20.2209, 'Contrastive': 21.0127}
+overfitting_avg_R10: {'Ridge': {'train_subset': 16.12, 'val': 9.31, 'test': 8.94, 'gap_train_minus_test': 7.17}, 'Early fusion': {'train_subset': 45.7, 'val': 14.99, 'test': 14.84, 'gap_train_minus_test': 30.86}, 'Contrastive': {'train_subset': 60.21, 'val': 15.32, 'test': 15.04, 'gap_train_minus_test': 45.17}, 'Cross-attention re-rank': {'train_subset': 48.22, 'val': 14.98, 'test': 15.49, 'gap_train_minus_test': 32.73}}
+latency_ms: {'1000': {'contrastive_ms': 0.076, 'early_fusion_ms': 0.109, 'hybrid_ms': 0.142, 'cross_attn_rerank_ms': 0.414, 'cross_attn_full_gallery_ms_extrapolated': 16.87}, '10000': {'contrastive_ms': 0.217, 'early_fusion_ms': 0.487, 'hybrid_ms': 0.275, 'cross_attn_rerank_ms': 0.554, 'cross_attn_full_gallery_ms_extrapolated': 168.702}, '100000': {'contrastive_ms': 0.45, 'early_fusion_ms': 3.314, 'hybrid_ms': 0.514, 'cross_attn_rerank_ms': 0.787, 'cross_attn_full_gallery_ms_extrapolated': 1687.016}, '1000000': {'contrastive_ms': 3.438, 'early_fusion_ms': 33.649, 'hybrid_ms': 3.51, 'cross_attn_rerank_ms': 3.775, 'cross_attn_full_gallery_ms_extrapolated': 16870.157}}
+query_encoding_ms_per_caption_bert: 0.7252
+training_cost: {'Ridge': {'params_M': 0.59, 'train_s_mean': 0.942, 'best_epoch_mean': 0.0, 'peak_gpu_gb': 0.0}, 'Early fusion': {'params_M': 1.313, 'train_s_mean': 74.474, 'best_epoch_mean': 18.667, 'peak_gpu_gb': 2.366}, 'Contrastive': {'params_M': 1.05, 'train_s_mean': 13.177, 'best_epoch_mean': 19.667, 'peak_gpu_gb': 1.08}, 'Cross-attention re-rank': {'params_M': 1.858, 'train_s_mean': 661.152, 'best_epoch_mean': 4.0, 'peak_gpu_gb': 8.6}, 'CLIP feats + contrastive head (ref)': {'params_M': 0.788, 'train_s_mean': 14.456, 'best_epoch_mean': 23.0, 'peak_gpu_gb': 0.0}}
+category_t2i_R10_macro: 16.0522
+category_t2i_R10_micro: 15.2638
+category_t2i_R10_worst_best: {'Dating': 5.9113, 'Food & Drink': 28.0079}
+category_ci_overlap_worst_best: False
+spearman_train_size_vs_R10: -0.3646
+spearman_generic_share_vs_R10: -0.0939
+sensitive_vs_other_t2i_R10: {'sensitive': 12.9927, 'other': 15.9665}
+sensitive_vs_other_t2i_len_R10: {'sensitive': 22.3447, 'other': 19.4543}
+mitigation: {'no mitigation': {'avg_R10': 15.04, 'macro': 14.89, 'worst': 4.76, 'gap': 21.47}, 'balanced sampling, beta=0.5': {'avg_R10': 13.88, 'macro': 13.97, 'worst': 5.58, 'gap': 21.83}, 'balanced sampling, beta=1.0': {'avg_R10': 13.68, 'macro': 13.83, 'worst': 6.74, 'gap': 16.01}}
+mitigation_gap_change_pts: {'0.5': 0.3651, '1.0': -5.4609}
+mitigation_overall_change_pts: {'0.5': -1.1563, '1.0': -1.3521}
+t2i_R10_by_genericity: {'unique': {'n': 5880, 'strict': 15.0, 'lenient': 15.0}, '2-5': {'n': 1254, 'strict': 18.6, 'lenient': 20.5}, '6-50': {'n': 833, 'strict': 15.8, 'lenient': 29.2}, '>50': {'n': 480, 'strict': 8.7, 'lenient': 66.2}}
+top1_error_anatomy: {'top1_errors': 8245, 'share_of_queries': 0.9761, 'wrong_screen_has_identical_caption': 0.0126, 'same_app': 0.0148, 'same_category': 0.1461, 'visual_near_duplicate': 0.0018}
+
+Table 6 (strict test results):
+                                     seeds        i2t_R1        i2t_R5       i2t_R10      i2t_MRR         i2t_MedR        t2i_R1        t2i_R5       t2i_R10      t2i_MRR       t2i_MedR           rsum
+method                                                                                                                                                                                                 
+Random                                   3          0.12   0.43 ± 0.10   0.62 ± 0.11  0.01 ± 0.00  1114.00 ± 11.22   0.05 ± 0.02   0.31 ± 0.08   0.54 ± 0.08  0.00 ± 0.00  850.67 ± 4.03    2.07 ± 0.37
+Ridge                                    1          2.05          6.56         10.19         0.05           188.00          1.09          4.47          7.70         0.04         226.00          32.06
+Early fusion                             3   2.56 ± 0.22   9.67 ± 0.33  15.52 ± 0.34  0.07 ± 0.00     94.50 ± 2.12   2.65 ± 0.08   8.72 ± 0.22  14.15 ± 0.38  0.07 ± 0.00  102.67 ± 1.25   53.28 ± 0.68
+Contrastive                              3   2.95 ± 0.14   9.86 ± 0.29  15.95 ± 0.31  0.07 ± 0.00     96.83 ± 4.37   2.57 ± 0.13   8.71 ± 0.17  14.12 ± 0.29  0.07 ± 0.00  110.00 ± 2.94   54.17 ± 0.93
+Hybrid (contrastive + EF re-rank)        3   2.95 ± 0.19  11.42 ± 0.13  17.16 ± 0.13  0.08 ± 0.00     97.00 ± 4.02   2.84 ± 0.07   9.64 ± 0.41  15.26 ± 0.35  0.07 ± 0.00  110.17 ± 2.72   59.28 ± 1.10
+Cross-attention re-rank                  3   3.32 ± 0.07  10.33 ± 0.40  16.32 ± 0.29  0.08 ± 0.00     97.00 ± 4.02   2.77 ± 0.11   9.06 ± 0.19  14.66 ± 0.55  0.07 ± 0.00  110.17 ± 2.72   56.46 ± 1.32
+CLIP zero-shot (ref)                     1         13.42         27.36         35.03         0.21            28.00          9.15         21.17         27.69         0.15          64.00         133.81
+CLIP feats + contrastive head (ref)      3  16.09 ± 0.32  36.16 ± 1.35  47.24 ± 0.86  0.26 ± 0.01     12.67 ± 0.47  10.78 ± 0.05  26.98 ± 0.38  36.60 ± 0.15  0.19 ± 0.00   24.67 ± 0.47  173.85 ± 2.75
+
+Table 7 (lenient):
+                                     i2t_len_R1  i2t_len_R10  i2t_len_MRR  t2i_len_R1  t2i_len_R10  t2i_len_MRR
+method                                                                                                         
+Random                                     0.16         1.13         0.01        0.10         1.10         0.01
+Ridge                                      2.28        10.31         0.05        1.31        10.83         0.05
+Early fusion                               3.61        16.77         0.08        3.72        18.79         0.09
+Contrastive                                3.69        17.59         0.08        3.31        18.74         0.09
+Hybrid (contrastive + EF re-rank)          4.12        18.98         0.09        3.78        20.14         0.09
+Cross-attention re-rank                    4.16        17.97         0.09        3.78        19.47         0.09
+CLIP zero-shot (ref)                      13.53        35.27         0.21        9.86        30.69         0.17
+CLIP feats + contrastive head (ref)       17.79        48.84         0.28       12.77        41.66         0.22
+
+Table 5 (ablations):
+                                                  test_avg_R10    sd  test_i2t_R10  test_t2i_R10  val_avg_R10  best_epoch  train_s
+config                                                                                                                            
+Contrastive: linear head                                 12.99  0.28         14.22         11.76        13.67       14.00     8.85
+Contrastive: main (multi-positive + dedup, MLP)          15.04  0.36         15.95         14.12        15.32       19.67    13.18
+Contrastive: multi-positive, no dedup                    15.09  0.66         16.13         14.06        15.79       15.67    10.86
+Contrastive: single positive (2.1)                       13.85  0.36         14.49         13.21        14.16       13.67     9.39
+Early fusion: BCE, 7 negatives (2.1)                     10.52  1.06         10.64         10.40        11.61       30.00   131.08
+Early fusion: main (multi-positive + dedup, MLP)         14.84  0.41         15.52         14.15        14.99       18.67    74.47
+
+Table 12 (per category):
+                         test_screens  train_screens  t2i_R10  ci_low  ci_high  i2t_R10  generic_caption_share
+category                                                                                                      
+Dating                             41            257      5.9     2.3     10.8      8.1                    0.3
+Communication                     139           1274      9.7     7.0     12.9     12.0                    0.3
+Books & Reference                  66            778     11.7     7.1     16.9     10.6                    0.3
+Education                          75           1088     12.0     7.4     16.7     16.9                    0.2
+Finance                            95            680     12.6     8.2     16.7     16.8                    0.3
+Entertainment                     124           1206     12.7     8.9     16.7     13.7                    0.3
+Social                             91           1302     13.5     8.9     19.3     15.0                    0.3
+Music & Audio                      74            636     13.6     9.5     18.1     14.0                    0.3
+Health & Fitness                  120           1124     13.7     9.9     17.7     13.6                    0.3
+Video Players & Editors            24            310     13.9     7.8     20.8     15.3                    0.3
+News & Magazines                   59            657     14.5     8.9     20.9     18.6                    0.4
+Business                           49            708     15.1     9.5     21.2     15.6                    0.4
+Lifestyle                         115           1121     15.1    11.5     19.3     18.0                    0.3
+Maps & Navigation                  72            607     15.9    10.5     21.9     15.3                    0.3
+Medical                            60            670     16.4    11.1     22.2     13.9                    0.2
+Travel & Local                     93           1067     16.4    11.7     21.2     20.8                    0.3
+Shopping                          114           1330     17.2    12.2     22.2     20.8                    0.3
+Auto & Vehicles                    25            234     17.6     8.0     28.5     16.0                    0.2
+Sports                             89            850     21.3    15.0     27.7     21.7                    0.3
+Comics                             22            278     23.3    12.1     35.5     30.3                    0.3
+Parenting                          44            260     24.0    14.8     33.9     24.2                    0.3
+Weather                            56            556     25.0    17.7     32.4     30.4                    0.3
+Food & Drink                       34            450     28.0    17.5     38.7     35.3                    0.3
+
+Table 13 (mitigation):
+                             avg_R10_mean  avg_R10_std  micro_mean  micro_std  macro_mean  macro_std  worst_mean  worst_std  best_mean  best_std  gap_mean  gap_std  sd_across_categories_mean  sd_across_categories_std
+config                                                                                                                                                                                                                  
+no mitigation                       15.04         0.36       14.12       0.36       14.89       0.27        4.76       1.58      26.23      0.34     21.47     1.49                       5.02                      0.25
+balanced sampling, beta=0.5         13.88         0.28       13.31       0.02       13.97       0.21        5.58       1.03      27.42      1.23     21.83     1.63                       4.73                      0.14
+balanced sampling, beta=1.0         13.68         0.54       13.21       0.56       13.83       0.92        6.74       0.76      22.75      3.69     16.01     3.77                       4.45                      0.56
+
+Table 14 (changes):
+                    aspect                                             proposal                                                                         implementation                                                                             evidence / reason
+0                    Split    Group apps linked by near-duplicates (cos > 0.95)     app-level split + purge of val/test screens with a train near-duplicate (fallback)  largest linked component = 61.6% of screens; leakage after split = {'val': 0.0, 'test': 0.0}
+1            Image encoder                                            ResNet-50               vit_b_16 (chosen on validation from resnet50, efficientnet_b0, vit_b_16)                                                                                       Table 3
+2             Text pooling                                    BERT mean pooling                                                                              bert_mean                                                               re-tested on full data, Table 3
+3   Early fusion objective         MLP match score (2.1 used BCE + 7 negatives)                                  in-batch multi-positive softmax, BCE kept as ablation                              same loss as the dual encoder isolates the architecture; Table 5
+4     Early fusion scoring                                         pairwise MLP                                     decomposed first fusion layer (exactly equivalent)                                 makes all-pairs training and full-gallery evaluation feasible
+5         Contrastive loss                      all five captions are positives                                              plus identical-text captions as positives                                                     32% of captions are reused across screens
+6               Evaluation                         R@1/5/10, MRR, bootstrap CIs     + median rank, lenient protocol, cluster bootstrap, 1K-gallery folds, paired tests                                                                                    Section 12
+7   Third fusion technique                                      not in proposal  cross-attention (intermediate) fusion as a top-K re-ranker with hard-negative batches                                      adds attention-based fusion from the brief; Section 10.2
+8          Bias mitigation  macro recall + CIs to separate noise from disparity                                 plus category-balanced sampling tested as a mitigation                                                                        Section 15.2, Table 13
+9           CLIP reference                                            zero-shot                                 zero-shot (fixed v5 API) + CLIP features with our head                                                                                  Section 10.2
+10                 Privacy            exclude screens with personal information                                      0 manual-review screens excluded, never displayed                                                                                   Section 2.4

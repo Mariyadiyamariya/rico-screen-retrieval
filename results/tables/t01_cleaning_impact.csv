@@ -1,0 +1,4 @@
+stage,screens,captions,captions_kept_%
+raw,22417,112085,100.0
+minus manual-review PII screens,22417,112085,100.0
+after caption cleaning,22417,111106,99.13

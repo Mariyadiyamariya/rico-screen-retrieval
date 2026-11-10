@@ -1,0 +1,12 @@
+aspect,proposal,implementation,evidence / reason
+Split,Group apps linked by near-duplicates (cos > 0.95),app-level split + purge of val/test screens with a train near-duplicate (fallback),"largest linked component = 61.6% of screens; leakage after split = {'val': 0.0, 'test': 0.0}"
+Image encoder,ResNet-50,"vit_b_16 (chosen on validation from resnet50, efficientnet_b0, vit_b_16)",Table 3
+Text pooling,BERT mean pooling,bert_mean,"re-tested on full data, Table 3"
+Early fusion objective,MLP match score (2.1 used BCE + 7 negatives),"in-batch multi-positive softmax, BCE kept as ablation",same loss as the dual encoder isolates the architecture; Table 5
+Early fusion scoring,pairwise MLP,decomposed first fusion layer (exactly equivalent),makes all-pairs training and full-gallery evaluation feasible
+Contrastive loss,all five captions are positives,plus identical-text captions as positives,32% of captions are reused across screens
+Evaluation,"R@1/5/10, MRR, bootstrap CIs","+ median rank, lenient protocol, cluster bootstrap, 1K-gallery folds, paired tests",Section 12
+Third fusion technique,not in proposal,cross-attention (intermediate) fusion as a top-K re-ranker with hard-negative batches,adds attention-based fusion from the brief; Section 10.2
+Bias mitigation,macro recall + CIs to separate noise from disparity,plus category-balanced sampling tested as a mitigation,"Section 15.2, Table 13"
+CLIP reference,zero-shot,zero-shot (fixed v5 API) + CLIP features with our head,Section 10.2
+Privacy,exclude screens with personal information,"0 manual-review screens excluded, never displayed",Section 2.4
