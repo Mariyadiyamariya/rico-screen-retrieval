@@ -20,9 +20,6 @@
 # **Success criterion (proposal).** The best learned multimodal model improves Recall@10 by at least 5 absolute
 # percentage points over ridge regression in **both** directions. Recall@1/5, MRR and median rank are also reported.
 #
-# **How to run.** Runtime > Change runtime type > **T4 GPU**, then Runtime > Run all. Total time roughly 1.5 hours on a
-# free T4 (features are cached to Google Drive, so a re-run after a disconnect skips extraction). Every number used in the
-# report is printed in the **Report Fact Sheet** at the end (Section 17) and saved under `outputs/`.
 #
 # | Section | Content | Rubric |
 # |---|---|---|
